@@ -1,5 +1,6 @@
 "use strict"
 
+/*
 const Koa = require("koa")
 const Bodyparser = require("koa-bodyparser")
 const Logger = require("koa-logger")
@@ -7,6 +8,15 @@ const Cors = require("@koa/cors")
 const Mongo = require("koa-mongo")
 const config = require("./config")
 const routes = require("./routes")
+*/
+
+import Koa from "koa";
+import Bodyparser from "koa-bodyparser";
+import Logger from "koa-logger";
+import Cors from "@koa/cors";
+import Mongo from "koa-mongo";
+import config from "./config.js";
+import routes from "./routes.js";
 
 const app = new Koa()
 

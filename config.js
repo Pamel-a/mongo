@@ -21,4 +21,5 @@ if (!config) throw new Error(`NODE_ENV \`${env}\` NOT CONFIGURED!`)
 const badProperty = Object.entries(config).find(([key, value]) => value === undefined)
 if (badProperty) throw new Error(`NODE_ENV \`${env}\` KEY \`${badProperty[0]}\` is undefined! Please configure it!`)
 
-module.exports = config
+//module.exports = config
+export default config

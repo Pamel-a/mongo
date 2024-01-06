@@ -1,9 +1,9 @@
 "use strict"
 
-const fetch = require("node-fetch")
-const Vars  = require ("vars")
+// const Vars  = require ("vars")
+import Vars from "./vars.js"
 
-const get = async ({ db }, { key, sub_key }) => 
+export const get = async ({ db }, { key, sub_key }) => 
 {
     const variable = await Vars.get (db, key)
     console.log("variable: ", variable)
@@ -14,13 +14,10 @@ const get = async ({ db }, { key, sub_key }) =>
         return [ 404, "not found" ]    
 }
 
-
-
-const set = async ({ db }, { key, value }) => 
+export const set = async ({ db }, { key, value }) => 
 {
     Vars.set (db, key, value)
     return "ok"
 }
 
-
-module.exports = { get, set }
+//module.exports = { get, set }
