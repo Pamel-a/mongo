@@ -23,8 +23,8 @@ module.exports = root
 
 
 // Import Koa Router and middleware
-import Router from '@koa/router';
-import bind from 'koa-clean'; 
+import Router from 'npm:@koa/router';
+import bind from 'npm:koa-clean'; 
 
 import UserController from './user-controller.js';
 import VarController from './var-controller.js';
