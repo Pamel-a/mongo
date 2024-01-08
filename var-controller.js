@@ -1,11 +1,11 @@
 "use strict"
 
 // const Vars  = require ("vars")
-import {get, set} from "./vars.js"
+import {_get, _set} from "./vars.js"
 
 export const get = async ({ db }, { key, sub_key }) => 
 {
-    const variable = await get (db, key)
+    const variable = await _get (db, key)
     console.log("variable: ", variable)
 
     if (variable)
@@ -16,7 +16,7 @@ export const get = async ({ db }, { key, sub_key }) =>
 
 export const set = async ({ db }, { key, value }) => 
 {
-    set (db, key, value)
+    _set (db, key, value)
     return "ok"
 }
 
