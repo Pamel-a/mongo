@@ -5,9 +5,9 @@ import {_get, _set} from "./vars.js"
 
 export const get = async ({ db }, { key, sub_key }) => 
 {
+    console.log("key: ", key)
     const variable = await _get (db, key)
     console.log("variable: ", variable)
-
     if (variable)
         return variable
     else
