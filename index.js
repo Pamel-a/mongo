@@ -10,11 +10,11 @@ const config = require("./config")
 const routes = require("./routes")
 */
 
-import Koa from "koa";
-import Bodyparser from "koa-bodyparser";
-import Logger from "koa-logger";
-import Cors from "@koa/cors";
-import Mongo from "koa-mongo";
+import Koa from "npm:koa";
+import Bodyparser from "npm:koa-bodyparser";
+import Logger from "npm:koa-logger";
+import Cors from "npm:@koa/cors";
+import Mongo from "npm:koa-mongo";
 import config from "./config.js";
 import routes from "./routes.js";
 
