@@ -27,4 +27,4 @@ if (badProperty)
     throw new Error(`NODE_ENV \`${env}\` KEY \`${badProperty[0]}\` is undefined! Please configure it!`)
 
 //module.exports = config
-export default config
+export { config }
