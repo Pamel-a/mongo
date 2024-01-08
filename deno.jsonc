@@ -1,9 +1,0 @@
-{
-  "imports": {
-    "koa": "https://deno.land/x/koa@2.15.3/mod.ts",
-    "koa-bodyparser": "https://deno.land/x/koa-bodyparser@5.4.0/mod.ts",
-    "koa-logger": "https://deno.land/x/koa-logger@2.4.2/mod.ts",
-    "@koa/cors": "https://deno.land/x/cors@3.4.1/mod.ts",
-    "koa-mongo": "https://deno.land/x/mongo@0.32.4/mod.ts"
-  }
-}
