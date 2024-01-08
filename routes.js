@@ -10,7 +10,7 @@ const vars = new Router({ prefix: "/vars" })
   .post("/get", bind(get))
   .post("/set", bind(set));
 
-const routes = new Router({ prefix: "/api" })
+const root = new Router({ prefix: "/api" })
   .use(vars.routes());
 
-export { routes };
+export { root };
