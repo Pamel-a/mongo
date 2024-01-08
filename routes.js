@@ -4,11 +4,11 @@
 import Router from 'npm:@koa/router';
 import bind from 'npm:koa-clean'; 
 
-import VarController from './var-controller.js';
+import {_get, _set} from './var-controller.js';
 
 const vars = new Router({ prefix: "/vars" })
-  .post("/get", bind(VarController._get))
-  .post("/set", bind(VarController._set));
+  .post("/get", bind(_get))
+  .post("/set", bind(_set));
 
 const root = new Router({ prefix: "/api" })
   .use(vars.routes());
