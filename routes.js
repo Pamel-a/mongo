@@ -26,18 +26,13 @@ module.exports = root
 import Router from 'npm:@koa/router';
 import bind from 'npm:koa-clean'; 
 
-import UserController from './user-controller.js';
 import VarController from './var-controller.js';
-
-const users = new Router({ prefix: "/users" })
-  .post("/slot", bind(UserController.slot));
 
 const vars = new Router({ prefix: "/vars" })
   .post("/get", bind(VarController.get))
   .post("/set", bind(VarController.set));
 
 const root = new Router({ prefix: "/api" })
-  .use(users.routes())
   .use(vars.routes());
 
 export { root };
