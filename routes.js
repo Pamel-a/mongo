@@ -1,9 +1,9 @@
 "use strict"
 
-const Deno = true
+const denoDeploy = true
 let Router, bind;
 
-if (Deno)
+if (denoDeploy)
 {
     Router = (await import("npm:koa-router")).default;
     bind = (await import("npm:koa-clean")).default;

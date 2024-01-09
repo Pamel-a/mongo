@@ -1,9 +1,9 @@
 "use strict"
 
 let Koa, Bodyparser, Logger, Cors, Mongo;
-const Deno = true
+const denoDeploy = true;
 
-if (Deno) 
+if (denoDeploy) 
 {
     Koa = (await import("npm:koa")).default;
     Bodyparser = (await import("npm:koa-bodyparser")).default;

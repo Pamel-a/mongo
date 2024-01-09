@@ -1,9 +1,9 @@
 
-const Deno = true
-const env = Deno ? Deno.env.get("NODE_ENV") || "dev" : process.env.NODE_ENV || "dev";
+const denoDeploy = true
+const env = denoDeploy ? Deno.env.get("NODE_ENV") || "dev" : process.env.NODE_ENV || "dev";
 
 let mongodb_uri, port;
-if (Deno) 
+if (denoDeploy) 
 {
     mongodb_uri = Deno.env.get("MONGODB_URI");
     port = Deno.env.get("PORT");
