@@ -14,7 +14,7 @@ else
     bind = (await import("koa-clean")).default;
 }
 
-import {get, set} from './vars.js';
+import { get, set } from './vars.js';
 
 const vars = new Router({ prefix: "/vars" })
   .post("/get", bind(get))

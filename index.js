@@ -21,7 +21,7 @@ else
 }
 
 import { config } from "./config.js";
-import { root } from "./routes.js";
+import { root }   from "./routes.js";
 
 const app = new Koa()
 

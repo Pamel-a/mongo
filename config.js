@@ -1,6 +1,6 @@
 
 const denoDeploy = true
-const env = denoDeploy ? Deno.env.get("NODE_ENV") || "dev" : process.env.NODE_ENV || "dev";
+const env = denoDeploy ? Deno.env.get("NODE_ENV") || "dev" : "dev";
 
 let mongodb_uri, port;
 if (denoDeploy) 
@@ -10,18 +10,18 @@ if (denoDeploy)
 } 
 else 
 {
-    mongodb_uri = process.env.MONGODB_URI;
-    port = process.env.PORT;
+    mongodb_uri = "...";
+    port = 3001;
 }
 
 const configs = {
     dev: {
-         mongodb_uri: mongodb_uri,
-         port: 3001,
+		mongodb_uri: mongodb_uri,
+		port: port,
     },
     production: {
-        mongodb_uri,
-        port,
+        mongodb_uri: mongodb_uri,
+        port: port,
     }
 }
 
