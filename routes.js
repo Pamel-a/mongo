@@ -1,24 +1,21 @@
 "use strict"
 
-/*
-const denoDeploy = true
-let Router, bind;
-
-if (denoDeploy)
-{
-    Router = (await import("npm:koa-router")).default;
-    bind = (await import("npm:koa-clean")).default;
-}
-else
-{
-    Router = (await import("koa-router")).default;
-    bind = (await import("koa-clean")).default;
-}
-*/
-
 import Router from "npm:koa-router";
 import bind   from "npm:koa-clean";
-import { get, set } from './vars.js';
+
+const _get = (db, key) =>
+    db.collection("vars").findOne({ key });
+
+const get = async ({ db }, { key }) => {	
+    console.log("get: ", key)
+    const variable = await _get (db, key)
+    console.log("variable: ", variable)
+
+    if (variable)
+        return variable
+    else
+        return [ 404, "not found" ]    
+}
 
 const vars = new Router({ prefix: "/vars" })
   .post("/get", bind(get))
