@@ -1,7 +1,7 @@
 "use strict"
 
 let Koa, Bodyparser, Logger, Cors, Mongo;
-export const Deno = false;
+const Deno = true
 
 if (Deno) 
 {
