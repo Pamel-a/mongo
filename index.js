@@ -10,7 +10,7 @@ import { root }   from "./routes.js";
 
 const app = new Koa()
 
-app.proxy = true
+app.proxy = false
 
 app.use(
     Mongo({
