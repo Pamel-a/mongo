@@ -1,22 +1,27 @@
 "use strict"
 
-/*
-const Koa = require("koa")
-const Bodyparser = require("koa-bodyparser")
-const Logger = require("koa-logger")
-const Cors = require("@koa/cors")
-const Mongo = require("koa-mongo")
-const config = require("./config")
-const routes = require("./routes")
-*/
+let Koa, Bodyparser, Logger, Cors, Mongo;
+export const Deno = false;
 
-import Koa from "npm:koa";
-import Bodyparser from "npm:koa-bodyparser";
-import Logger from "npm:koa-logger";
-import Cors from "npm:@koa/cors";
-import Mongo from "npm:koa-mongo";
-import {config} from "./config.js";
-import {root} from "./routes.js";
+if (Deno) 
+{
+    Koa = (await import("npm:koa")).default;
+    Bodyparser = (await import("npm:koa-bodyparser")).default;
+    Logger = (await import("npm:koa-logger")).default;
+    Cors = (await import("npm:@koa/cors")).default;
+    Mongo = (await import("npm:koa-mongo")).default;
+} 
+else 
+{
+    Koa = (await import("koa")).default;
+    Bodyparser = (await import("koa-bodyparser")).default;
+    Logger = (await import("koa-logger")).default;
+    Cors = (await import("@koa/cors")).default;
+    Mongo = (await import("koa-mongo")).default;
+}
+
+import { config } from "./config.js";
+import { root } from "./routes.js";
 
 const app = new Koa()
 

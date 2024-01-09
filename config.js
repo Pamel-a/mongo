@@ -1,18 +1,27 @@
-//const env = process.env.NODE_ENV || "dev"
-const env = Deno.env.get("NODE_ENV") || "dev";
+
+const Deno = false
+const env = Deno ? Deno.env.get("NODE_ENV") || "dev" : process.env.NODE_ENV || "dev";
+
+let mongodb_uri, port;
+if (Deno) 
+{
+    mongodb_uri = Deno.env.get("MONGODB_URI");
+    port = Deno.env.get("PORT");
+} 
+else 
+{
+    mongodb_uri = process.env.MONGODB_URI;
+    port = process.env.PORT;
+}
 
 const configs = {
     dev: {
-
-        //mongodb_uri: "mongodb://127.0.0.1:27017/Cluster0",
-        mongodb_uri: "mongodb+srv://...mongodb.net/Cluster0?retryWrites=true&w=majority",
-        port: 3001,
+		mongodb_uri: "...",
+		port: 3001,
     },
-	production: {
-        //mongodb_uri: process.env.MONGODB_URI,
-        //port: process.env.PORT,
-        mongodb_uri: Deno.env.get("MONGODB_URI"),
-        port: Deno.env.get("PORT"),
+    production: {
+        mongodb_uri,
+        port,
     }
 }
 
@@ -26,5 +35,4 @@ const badProperty = Object.entries(config).find(([key, value]) => value === unde
 if (badProperty) 
     throw new Error(`NODE_ENV \`${env}\` KEY \`${badProperty[0]}\` is undefined! Please configure it!`)
 
-//module.exports = config
 export { config }

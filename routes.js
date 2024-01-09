@@ -1,10 +1,20 @@
 "use strict"
 
-// Import Koa Router and middleware
-import Router from 'npm:@koa/router';
-import bind from 'npm:koa-clean'; 
+const Deno = false
+let Router, bind;
 
-import {get, set} from './var-controller.js';
+if (Deno)
+{
+    Router = (await import("npm:koa-router")).default;
+    bind = (await import("npm:koa-clean")).default;
+}
+else
+{
+    Router = (await import("koa-router")).default;
+    bind = (await import("koa-clean")).default;
+}
+
+import {get, set} from './vars.js';
 
 const vars = new Router({ prefix: "/vars" })
   .post("/get", bind(get))
