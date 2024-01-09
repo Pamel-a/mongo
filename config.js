@@ -16,8 +16,8 @@ else
 
 const configs = {
     dev: {
-		mongodb_uri: "...",
-		port: 3001,
+         mongodb_uri: mongodb_uri,
+         port: 3001,
     },
     production: {
         mongodb_uri,
