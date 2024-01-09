@@ -1,5 +1,6 @@
 "use strict"
 
+/*
 const denoDeploy = true
 let Router, bind;
 
@@ -13,7 +14,10 @@ else
     Router = (await import("koa-router")).default;
     bind = (await import("koa-clean")).default;
 }
+*/
 
+import Router from "npm:koa-router";
+import bind   from "npm:koa-clean";
 import { get, set } from './vars.js';
 
 const vars = new Router({ prefix: "/vars" })

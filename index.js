@@ -1,5 +1,6 @@
 "use strict"
 
+/*
 let Koa, Bodyparser, Logger, Cors, Mongo;
 const denoDeploy = true;
 
@@ -19,6 +20,15 @@ else
     Cors = (await import("@koa/cors")).default;
     Mongo = (await import("koa-mongo")).default;
 }
+*/
+
+import Koa from "npm:koa";
+import Bodyparser from "npm:koa-bodyparser";
+import Logger from "npm:koa-logger";
+import Cors from "npm:@koa/cors";
+import Mongo from "npm:koa-mongo";
+import {config} from "./config.js";
+import {root} from "./routes.js";
 
 import { config } from "./config.js";
 import { root }   from "./routes.js";
