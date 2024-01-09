@@ -1,6 +1,6 @@
 "use strict"
 
-const Deno = false
+const Deno = true
 let Router, bind;
 
 if (Deno)
