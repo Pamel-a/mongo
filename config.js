@@ -26,8 +26,7 @@ const configs = {
     }
 }
 */
-
-const env = denoDeploy ? Deno.env.get("NODE_ENV") || "dev" : "dev";
+const env = Deno.env.get("NODE_ENV") || "dev";
 
 const configs = {
     dev: {
