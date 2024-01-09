@@ -1,5 +1,5 @@
 
-const Deno = false
+const Deno = true
 const env = Deno ? Deno.env.get("NODE_ENV") || "dev" : process.env.NODE_ENV || "dev";
 
 let mongodb_uri, port;
