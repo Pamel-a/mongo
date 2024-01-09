@@ -19,7 +19,6 @@ const get = async ({ db }, { key }) => {
 
 const vars = new Router({ prefix: "/vars" })
   .post("/get", bind(get))
-  .post("/set", bind(set));
 
 const root = new Router({ prefix: "/api" })
   .use(vars.routes());
